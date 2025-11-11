@@ -343,6 +343,47 @@ body {
     font-weight: 500;
 }
 
+/* Stock Status Tags */
+.feature-tag.in-stock {
+    background: #e8f5e8;
+    color: #2e7d2e;
+}
+
+.feature-tag.out-of-stock {
+    background: #ffeaea;
+    color: #d63031;
+}
+
+.feature-tag.limited-stock {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.feature-tag.bestseller {
+    background: #e1f5fe;
+    color: #0277bd;
+    position: relative;
+}
+
+.feature-tag.bestseller::before {
+    content: "🏆 ";
+}
+
+/* Special Pricing */
+.special-offer {
+    color: #d63031;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 8px;
+}
+
+.special-price {
+    color: #d63031;
+    font-weight: 500;
+    text-decoration: line-through;
+    font-size: 1rem;
+}
+
 .product-price {
     font-size: 1.2rem;
     font-weight: 600;
