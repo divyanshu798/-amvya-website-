@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact AMVYA - Get in touch for product inquiries, custom orders, or design consultations. We're here to help transform your home.">
+    <meta name="keywords" content="contact AMVYA, home decor consultation, custom orders, product inquiries, customer service">
+    <meta name="author" content="AMVYA">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Contact AMVYA - Get in Touch | Home Décor Consultation">
+    <meta property="og:description" content="Ready to transform your home? Contact AMVYA for product inquiries, custom orders, or personalized design consultations.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://amvya.com/contact">
+    
+    <title>Contact AMVYA - Get in Touch | Home Décor Consultation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html"><h1>AMVYA</h1></a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="products.html" class="nav-link">Products</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Get in Touch</h1>
+            <p class="page-subtitle">Ready to transform your space? We'd love to hear from you.</p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="contact-methods">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">How Can We Help?</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="contact-title">WhatsApp</h3>
+                    <p class="contact-description">Quick questions, product inquiries, or instant support. We respond within hours.</p>
+                    <a href="https://wa.me/919876543210?text=Hi%20AMVYA!%20I'm%20interested%20in%20your%20home%20décor%20collection." class="contact-link" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        +91 98765 43210
+                    </a>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-title">Email</h3>
+                    <p class="contact-description">Detailed inquiries, custom orders, or collaboration requests. We'll respond within 24 hours.</p>
+                    <a href="mailto:hello@amvya.com?subject=Product%20Inquiry%20from%20Website" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        hello@amvya.com
+                    </a>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <h3 class="contact-title">Instagram</h3>
+                    <p class="contact-description">Follow us for daily inspiration, behind-the-scenes content, and styling tips.</p>
+                    <a href="https://instagram.com/amvya_home" class="contact-link" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                        @amvya_home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-form-section">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-header">
+                    <h2 class="section-title">Send Us a Message</h2>
+                    <p class="form-subtitle">Whether you need styling advice, have product questions, or want to place a custom order, we're here to help.</p>
+                    <div class="section-divider"></div>
+                </div>
+                
+                <form class="contact-form" id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="inquiryType">Type of Inquiry *</label>
+                        <select id="inquiryType" name="inquiryType" required>
+                            <option value="">Select an option</option>
+                            <option value="product-inquiry">Product Inquiry</option>
+                            <option value="custom-order">Custom Order</option>
+                            <option value="styling-consultation">Styling Consultation</option>
+                            <option value="wholesale">Wholesale/Bulk Orders</option>
+                            <option value="collaboration">Collaboration</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" placeholder="Brief description of your inquiry" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Tell us more about how we can help you..." required></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <span class="checkmark"></span>
+                            I'd like to receive updates about new products and styling tips
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary form-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                    
+                    <p class="form-note">We typically respond within 24 hours. For urgent inquiries, please WhatsApp us.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fas fa-shipping-fast"></i>
+                        What are your shipping options?
+                    </h3>
+                    <p class="faq-answer">We offer free shipping on orders above ₹2,999 across India. Standard delivery takes 5-7 business days, and express delivery is available for urgent orders.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fas fa-undo"></i>
+                        What is your return policy?
+                    </h3>
+                    <p class="faq-answer">We offer a 30-day hassle-free return policy. Items must be unused and in original packaging. Return shipping is free for defective items.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fas fa-palette"></i>
+                        Do you offer custom designs?
+                    </h3>
+                    <p class="faq-answer">Yes! We work with our artisan partners to create custom pieces. Contact us with your requirements, and we'll provide a quote and timeline.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fas fa-store"></i>
+                        Do you have a physical store?
+                    </h3>
+                    <p class="faq-answer">Currently, we operate online-only to keep our prices accessible. However, we're planning to open experience centers in major cities soon.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fas fa-credit-card"></i>
+                        What payment methods do you accept?
+                    </h3>
+                    <p class="faq-answer">We accept all major credit/debit cards, UPI, net banking, and digital wallets. We also offer EMI options on orders above ₹5,000.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3 class="faq-question">
+                        <i class="fas fa-leaf"></i>
+                        Are your products eco-friendly?
+                    </h3>
+                    <p class="faq-answer">Sustainability is core to our brand. We use natural materials, eco-friendly packaging, and work with artisans who follow sustainable practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Hours -->
+    <section class="business-hours">
+        <div class="container">
+            <div class="hours-content">
+                <h2 class="section-title">Customer Support Hours</h2>
+                <div class="section-divider"></div>
+                <div class="hours-grid">
+                    <div class="hours-item">
+                        <div class="hours-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp Support</h3>
+                        <p>Monday - Saturday<br>9:00 AM - 8:00 PM IST</p>
+                    </div>
+                    <div class="hours-item">
+                        <div class="hours-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Support</h3>
+                        <p>24/7 - We respond within<br>24 hours on business days</p>
+                    </div>
+                    <div class="hours-item">
+                        <div class="hours-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <h3>Phone Consultation</h3>
+                        <p>By appointment only<br>Book via WhatsApp or email</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Let's Create Something Beautiful Together</h2>
+                <p class="cta-text">Whether you're starting fresh or refreshing your current space, we're here to help you every step of the way.</p>
+                <div class="cta-buttons">
+                    <a href="products.html" class="btn-primary">Browse Products</a>
+                    <a href="about.html" class="btn-secondary">Learn About Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>AMVYA</h3>
+                    <p>Designed for Serenity</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://instagram.com/amvya_home" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/919876543210" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:hello@amvya.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AMVYA. All rights reserved. | Sustainable. Artisanal. Everyday Luxury.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simple validation
+            if (!data.firstName || !data.lastName || !data.email || !data.inquiryType || !data.subject || !data.message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Create WhatsApp message
+            const whatsappMessage = `Hi AMVYA! 
+
+New inquiry from website:
+
+Name: ${data.firstName} ${data.lastName}
+Email: ${data.email}
+Phone: ${data.phone || 'Not provided'}
+Inquiry Type: ${data.inquiryType}
+Subject: ${data.subject}
+
+Message:
+${data.message}
+
+${data.newsletter ? 'Please add me to your newsletter.' : ''}`;
+            
+            const whatsappUrl = `https://wa.me/919876543210?text=${encodeURIComponent(whatsappMessage)}`;
+            
+            // Show success message
+            alert('Thank you for your message! You will be redirected to WhatsApp to complete your inquiry.');
+            
+            // Redirect to WhatsApp
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
