@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful - AMVYA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏠</text></svg>">
+    <meta name="description" content="Your AMVYA order has been successfully placed. Thank you for choosing premium home décor and comfort products.">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand-link">
+                        <span class="brand-text">AMVYA</span>
+                        <span class="brand-tagline">Designed for Serenity</span>
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="products.html" class="nav-link">Products</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Payment Success Section -->
+    <section class="payment-success">
+        <div class="container">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                
+                <h1 class="success-title">Payment Successful!</h1>
+                <p class="success-subtitle">Thank you for your purchase from AMVYA</p>
+
+                <div class="order-details" id="order-details">
+                    <!-- Order details will be populated by JavaScript -->
+                </div>
+
+                <div class="success-actions">
+                    <a href="products.html" class="btn-primary">Continue Shopping</a>
+                    <a href="index.html" class="btn-secondary">Back to Home</a>
+                </div>
+
+                <div class="next-steps">
+                    <h3>What happens next?</h3>
+                    <div class="steps-grid">
+                        <div class="step">
+                            <div class="step-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Order Confirmation</h4>
+                            <p>You'll receive a confirmation message on WhatsApp with your order details.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <h4>Personal Contact</h4>
+                            <p>Our team will contact you within 24 hours to confirm delivery details.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">
+                                <i class="fas fa-shipping-fast"></i>
+                            </div>
+                            <h4>Fast Delivery</h4>
+                            <p>Your premium home décor items will be carefully packaged and delivered.</p>
+                        </div>
+                        <div class="step">
+                            <div class="step-icon">
+                                <i class="fas fa-home"></i>
+                            </div>
+                            <h4>Enjoy at Home</h4>
+                            <p>Transform your space with AMVYA's premium quality products.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-support">
+                    <h3>Need Help?</h3>
+                    <p>If you have any questions about your order, feel free to reach out to us:</p>
+                    <div class="support-options">
+                        <a href="https://wa.me/919911518877" class="support-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp: +91-99115-18877</span>
+                        </a>
+                        <a href="mailto:amvyastore@gmail.com" class="support-link">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email: amvyastore@gmail.com</span>
+                        </a>
+                        <a href="https://www.instagram.com/amvyastore" class="support-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram: @amvyastore</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>AMVYA</h3>
+                    <p>Designed for Serenity</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="products.html">Products</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.instagram.com/amvyastore?igsh=czFlczhwa2wxeDhz" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/919911518877" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="mailto:amvyastore@gmail.com"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 AMVYA. All rights reserved. | Sustainable. Artisanal. Everyday Luxury.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Order Details -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get order details from localStorage
+            const orderData = localStorage.getItem('amvya_last_order');
+            const orderDetails = document.getElementById('order-details');
+            
+            if (orderData) {
+                const order = JSON.parse(orderData);
+                
+                if (order.cart) {
+                    // Multiple items order
+                    orderDetails.innerHTML = `
+                        <div class="order-summary">
+                            <h3>Order Summary</h3>
+                            <div class="order-info">
+                                <p><strong>Payment ID:</strong> ${order.razorpay_payment_id}</p>
+                                <p><strong>Date:</strong> ${new Date(order.timestamp).toLocaleDateString('en-IN', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                })}</p>
+                                <p><strong>Total Amount:</strong> ₹${order.total.toLocaleString()}</p>
+                            </div>
+                            
+                            <div class="ordered-items">
+                                <h4>Items Ordered:</h4>
+                                <div class="items-list">
+                                    ${order.cart.map(item => `
+                                        <div class="order-item">
+                                            <div class="item-details">
+                                                <span class="item-name">${item.name}</span>
+                                                <span class="item-price">₹${item.displayPrice} × ${item.quantity}</span>
+                                            </div>
+                                            <div class="item-total">₹${(item.displayPrice * item.quantity).toLocaleString()}</div>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    // Single item order
+                    orderDetails.innerHTML = `
+                        <div class="order-summary">
+                            <h3>Order Summary</h3>
+                            <div class="order-info">
+                                <p><strong>Product:</strong> ${order.product.name}</p>
+                                <p><strong>Amount:</strong> ₹${order.product.displayPrice.toLocaleString()}</p>
+                                <p><strong>Payment ID:</strong> ${order.razorpay_payment_id}</p>
+                                <p><strong>Date:</strong> ${new Date(order.timestamp).toLocaleDateString('en-IN', {
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                })}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            } else {
+                orderDetails.innerHTML = `
+                    <div class="order-summary">
+                        <h3>Order Summary</h3>
+                        <p>No recent order found. If you just completed a payment, please contact our support team.</p>
+                    </div>
+                `;
+            }
+        });
+    </script>
+
+    <!-- Mobile Navigation Script -->
+    <script src="assets/js/mobile-nav.js"></script>
+
+    <!-- Enhanced 3D Animations -->
+    <script src="assets/js/animations.js"></script>
+
+    <style>
+        .payment-success {
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, var(--warm-white) 0%, var(--primary-beige) 100%);
+            min-height: 100vh;
+        }
+
+        .success-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .success-icon {
+            margin-bottom: 30px;
+        }
+
+        .success-icon i {
+            font-size: 4rem;
+            color: #10ac84;
+            animation: pulse 2s infinite;
+        }
+
+        .success-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+
+        .success-subtitle {
+            font-size: 1.2rem;
+            color: var(--soft-gray);
+            margin-bottom: 40px;
+        }
+
+        .order-details {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--shadow-light);
+            text-align: left;
+        }
+
+        .order-summary h3 {
+            color: var(--charcoal);
+            margin-bottom: 20px;
+            font-family: var(--font-display);
+        }
+
+        .order-info {
+            margin-bottom: 20px;
+        }
+
+        .order-info p {
+            margin: 10px 0;
+            color: var(--soft-gray);
+        }
+
+        .ordered-items h4 {
+            color: var(--charcoal);
+            margin: 20px 0 15px 0;
+        }
+
+        .order-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .item-name {
+            font-weight: 500;
+            color: var(--charcoal);
+        }
+
+        .item-price {
+            color: var(--soft-gray);
+            font-size: 0.9rem;
+        }
+
+        .item-total {
+            font-weight: 600;
+            color: var(--dusty-rose);
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 40px 0;
+        }
+
+        .next-steps {
+            margin: 60px 0;
+        }
+
+        .next-steps h3 {
+            color: var(--charcoal);
+            margin-bottom: 30px;
+            font-family: var(--font-display);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .step {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+        }
+
+        .step-icon {
+            margin-bottom: 15px;
+        }
+
+        .step-icon i {
+            font-size: 2.5rem;
+            color: var(--dusty-rose);
+        }
+
+        .step h4 {
+            color: var(--charcoal);
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: var(--soft-gray);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .contact-support {
+            background: var(--dusty-rose-light);
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-support h3 {
+            color: var(--charcoal);
+            margin-bottom: 15px;
+            font-family: var(--font-display);
+        }
+
+        .contact-support p {
+            color: var(--soft-gray);
+            margin-bottom: 25px;
+        }
+
+        .support-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .support-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 15px;
+            background: white;
+            border-radius: 8px;
+            color: var(--charcoal);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .support-link:hover {
+            background: var(--primary-beige);
+            transform: translateX(5px);
+        }
+
+        .support-link i {
+            font-size: 1.2rem;
+            color: var(--dusty-rose);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 768px) {
+            .success-title {
+                font-size: 2rem;
+            }
+
+            .success-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .order-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .support-options {
+                gap: 10px;
+            }
+        }
+    </style>
+</body>
+</html>
