@@ -16,30 +16,48 @@ class AMVYAPayment {
     // Initialize payment button event handlers
     initializePaymentHandlers() {
         document.addEventListener('DOMContentLoaded', () => {
-            // Add payment buttons to all product cards
+            // Add payment buttons to all product cards that don't have them
             this.addPaymentButtonsToProducts();
             
-            // Handle buy now buttons
-            document.addEventListener('click', (e) => {
-                if (e.target.classList.contains('btn-buy-now')) {
-                    e.preventDefault();
-                    const productCard = e.target.closest('.product-card');
-                    const productData = this.extractProductData(productCard);
-                    this.initiatePayment(productData);
-                }
-                
-                if (e.target.classList.contains('btn-add-to-cart')) {
-                    e.preventDefault();
-                    const productCard = e.target.closest('.product-card');
-                    const productData = this.extractProductData(productCard);
-                    this.addToCart(productData);
-                }
-                
-                if (e.target.classList.contains('cart-checkout-btn')) {
-                    e.preventDefault();
-                    this.checkoutCart();
-                }
-            });
+            // Setup event delegation for all payment buttons
+            this.setupEventListeners();
+        });
+    }
+
+    // Setup event listeners using event delegation
+    setupEventListeners() {
+        // Handle buy now buttons
+        document.addEventListener('click', (e) => {
+            console.log('Click detected on:', e.target); // Debug log
+            
+            if (e.target.classList.contains('btn-buy-now') || e.target.closest('.btn-buy-now')) {
+                e.preventDefault();
+                console.log('Buy Now clicked!'); // Debug log
+                const button = e.target.classList.contains('btn-buy-now') ? e.target : e.target.closest('.btn-buy-now');
+                const productCard = button.closest('.product-card');
+                const productData = this.extractProductData(productCard);
+                console.log('Product data:', productData); // Debug log
+                this.initiatePayment(productData);
+            }
+            
+            if (e.target.classList.contains('btn-add-to-cart') || e.target.closest('.btn-add-to-cart')) {
+                e.preventDefault();
+                console.log('Add to Cart clicked!'); // Debug log
+                const button = e.target.classList.contains('btn-add-to-cart') ? e.target : e.target.closest('.btn-add-to-cart');
+                const productCard = button.closest('.product-card');
+                const productData = this.extractProductData(productCard);
+                this.addToCart(productData);
+            }
+            
+            if (e.target.classList.contains('cart-checkout-btn')) {
+                e.preventDefault();
+                this.checkoutCart();
+            }
+
+            if (e.target.classList.contains('cart-link') || e.target.closest('.cart-link')) {
+                e.preventDefault();
+                this.showCartModal();
+            }
         });
     }
 
@@ -120,6 +138,15 @@ class AMVYAPayment {
 
     // Initiate Razorpay payment
     initiatePayment(productData) {
+        console.log('Initiating payment for:', productData); // Debug log
+        
+        // Check if Razorpay is available
+        if (typeof Razorpay === 'undefined') {
+            alert('Payment system is loading. Please try again in a moment.');
+            console.error('Razorpay script not loaded');
+            return;
+        }
+
         const options = {
             key: this.razorpayKeyId,
             amount: productData.price,
@@ -147,6 +174,7 @@ class AMVYAPayment {
             }
         };
 
+        console.log('Opening Razorpay with options:', options); // Debug log
         const rzp = new Razorpay(options);
         
         rzp.on('payment.failed', (response) => {
@@ -258,16 +286,17 @@ class AMVYAPayment {
     updateCartDisplay() {
         const cartCount = this.cart.reduce((total, item) => total + item.quantity, 0);
         
-        // Update cart icon in navigation (if exists)
-        let cartIcon = document.querySelector('.cart-icon');
-        if (!cartIcon) {
+        // Find existing cart badge
+        let cartBadge = document.querySelector('.cart-badge');
+        if (cartBadge) {
+            cartBadge.textContent = cartCount;
+            cartBadge.style.display = cartCount > 0 ? 'block' : 'none';
+        } else {
+            // If no cart badge exists, create the cart icon
             this.createCartIcon();
-            cartIcon = document.querySelector('.cart-icon');
         }
         
-        const cartBadge = cartIcon.querySelector('.cart-badge');
-        cartBadge.textContent = cartCount;
-        cartBadge.style.display = cartCount > 0 ? 'block' : 'none';
+        console.log('Cart updated with', cartCount, 'items'); // Debug log
     }
 
     // Create cart icon in navigation
@@ -484,5 +513,27 @@ class AMVYAPayment {
 // Initialize payment system when page loads
 let amvyaPayment;
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('Initializing AMVYA Payment System...'); // Debug log
     amvyaPayment = new AMVYAPayment();
+    console.log('Payment system initialized:', amvyaPayment); // Debug log
+    
+    // Add test functionality in development
+    window.testPayment = () => {
+        const testProduct = {
+            name: 'Test Product',
+            price: 100 * 100, // ₹100 in paise
+            displayPrice: 100,
+            description: 'Test payment for AMVYA',
+            features: ['Test'],
+            currency: 'INR'
+        };
+        amvyaPayment.initiatePayment(testProduct);
+    };
+    
+    // Log all buy now buttons found
+    const buyButtons = document.querySelectorAll('.btn-buy-now');
+    console.log('Found Buy Now buttons:', buyButtons.length);
+    buyButtons.forEach((btn, index) => {
+        console.log(`Button ${index}:`, btn);
+    });
 });
